@@ -1,9 +1,16 @@
-
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, classification_report
+from sklearn.metrics import (
+    accuracy_score,
+    precision_score,
+    recall_score,
+    f1_score,
+    roc_auc_score,
+    classification_report,
+    roc_curve,
+    auc,
+)
 import matplotlib.pyplot as plt
-from sklearn.metrics import roc_curve, auc
+
 
 def train_test_split_data(X, y, test_size=0.2, random_state=42, stratify=None):
     """
@@ -27,10 +34,9 @@ def train_test_split_data(X, y, test_size=0.2, random_state=42, stratify=None):
     X_train, X_test, y_train, y_test : tuple
         Tuple containing train-test split of inputs.
     """
-
-
-    return train_test_split(X, y, test_size=test_size, random_state=random_state, stratify=stratify)
-
+    return train_test_split(
+        X, y, test_size=test_size, random_state=random_state, stratify=stratify
+    )
 
 
 def evaluate_model(y_true, y_pred, y_proba, model_name="Model"):
@@ -70,5 +76,5 @@ def evaluate_model(y_true, y_pred, y_proba, model_name="Model"):
         "precision": prec,
         "recall": rec,
         "f1": f1,
-        "roc_auc": rocauc
+        "roc_auc": rocauc,
     }
