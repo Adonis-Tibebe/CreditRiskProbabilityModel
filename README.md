@@ -94,3 +94,88 @@ pip install -r requirements.txt
 ## Usage
 
 Add usage instructions here.
+
+---
+
+## Project Structure
+
+```
+CreditRiskProbabilityModel/
+│
+├── src/              # Main source code (API, models, services, utils)
+├── notebooks/        # Jupyter notebooks for EDA, modeling, and tests
+├── tests/            # Unit and integration tests
+├── data/             # Data files (tracked by DVC, not in git)
+├── models/           # Model artifacts and MLflow runs
+├── scripts/          # Utility scripts
+├── requirements.txt  # Python dependencies
+├── Dockerfile        # Docker build file
+├── docker-compose.yml
+├── Makefile
+├── pyproject.toml
+├── README.md
+└── .dvc/             # DVC config and cache (after dvc init)
+```
+
+---
+## How to Run
+
+### Local (development server)
+```bash
+uvicorn src.api.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+### With Docker
+```bash
+docker-compose build
+docker-compose up
+```
+Then visit [http://localhost:8000/docs](http://localhost:8000/docs) for the API docs.
+
+---
+## Testing
+
+- **Lint:**  
+  ```bash
+  flake8 src/ --max-line-length=120
+  ```
+- **Unit & Integration Tests:**  
+  ```bash
+  pytest tests/
+  ```
+- **GitHub Actions:**  
+  Tests and linting are run automatically on every push to the main branch.
+
+---
+## DVC Usage
+
+- **Initialize DVC:**  
+  ```bash
+  dvc init
+  ```
+- **Track data:**  
+  ```bash
+  dvc add data/raw
+  ```
+- **Set up a local remote:**  
+  ```bash
+  dvc remote add -d localremote ../dvcstore
+  ```
+- **Push data to remote:**  
+  ```bash
+  dvc push
+  ```
+  ## Contributing
+
+1. Fork the repo and create your branch from `main`.
+2. Make your changes and add tests as needed.
+3. Run `flake8` and `pytest` to ensure code quality.
+4. Submit a pull request.
+
+---
+
+## License
+
+Add your license information here.
+
+---
