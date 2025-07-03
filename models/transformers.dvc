@@ -1,0 +1,6 @@
+outs:
+- md5: 12f3ff0c40e408ab994543ea8a7a34c8.dir
+  size: 21625
+  nfiles: 1
+  hash: md5
+  path: transformers

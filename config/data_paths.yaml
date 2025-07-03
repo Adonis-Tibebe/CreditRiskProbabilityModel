@@ -1,0 +1,3 @@
+raw_data: ../data/raw/cleaned_data.csv
+processed_data: ../data/processed/logit_data.csv
+model_dir: ../models/
