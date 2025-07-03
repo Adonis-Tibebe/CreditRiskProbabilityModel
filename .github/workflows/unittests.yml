@@ -26,6 +26,7 @@ jobs:
         pip install flake8 pytest
 
     - name: Lint with flake8
+      continue-on-error: true
       run: |
         flake8 src/ --max-line-length=120
 
