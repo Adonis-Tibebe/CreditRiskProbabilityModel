@@ -1,7 +1,9 @@
 
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
-
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, classification_report
+import matplotlib.pyplot as plt
+from sklearn.metrics import roc_curve, auc
 
 def train_test_split_data(X, y, test_size=0.2, random_state=42, stratify=None):
     """
@@ -29,9 +31,7 @@ def train_test_split_data(X, y, test_size=0.2, random_state=42, stratify=None):
 
     return train_test_split(X, y, test_size=test_size, random_state=random_state, stratify=stratify)
 
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, classification_report
-import matplotlib.pyplot as plt
-from sklearn.metrics import roc_curve, auc
+
 
 def evaluate_model(y_true, y_pred, y_proba, model_name="Model"):
     # Compute each metric
