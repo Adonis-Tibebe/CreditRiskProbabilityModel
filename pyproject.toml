@@ -1,12 +1,29 @@
-[build-system]
-requires = ["setuptools>=45", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
-name = "your-project-name"
+name = "creditriskprobabilitymodel"
 version = "0.1.0"
-description = ""
-requires-python = ">=3.8"
+description = "Credit Risk Probability Model API"
+authors = [
+    { name="Adoniyas Tibebe", email="adatibebe12@gmail.com" }
+]
+requires-python = ">=3.10"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.flake8]
+max-line-length = 120
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".venv",
+    "venv"
+]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests"
+]
+addopts = "-ra"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
