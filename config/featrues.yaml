@@ -1,0 +1,9 @@
+features:
+  - NetSpend
+  - GrossVolume
+  - TxnCount
+  - AvgTxnValue
+  - Recency
+  - PreferredProvider
+  - MostCommonPricingStrategy
+  - PreferredChannel
